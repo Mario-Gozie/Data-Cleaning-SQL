@@ -1,11 +1,12 @@
-Introduction
+## INTRODUCTION
+This is a data cleaning task of a sales data using SQL
 
 
 ### VIEWING THE DATASET
 
-select * from Sales_Dirty;
+`select * from Sales_Dirty;`
 
-![Alt Text]()
+![Alt Text](https://github.com/Mario-Gozie/Data-Cleaning-SQL/blob/main/Images/Screenshot%20(347).png)
 
 ### RENAMING COLUMNS
 
@@ -17,6 +18,8 @@ Because SQL do not accept column names with spaces except if they are in hard br
 `exec sp_rename 'Sales_Dirty.F4', 'South','COLUMN';`
 `exec sp_rename 'Sales_Dirty.F5', 'West','COLUMN';`
 
+
+![Alt TexT](https://github.com/Mario-Gozie/Data-Cleaning-SQL/blob/main/Images/Screenshot%20(348).png)
 
 
 ### EXTRACTING IMPORTANT DETAILS FROM THE DATA
@@ -32,6 +35,8 @@ I used the code below to extract Names of sales persons sales they made per regi
   case when Sales_Person like '%Sales for%' then RIGHT(Sales_Person,10)
   end as Dates, ROW_NUMBER() over(order by (select Null)) as Row_num
   from Sales_Dirty;`
+![Alt Text](https://github.com/Mario-Gozie/Data-Cleaning-SQL/blob/main/Images/Screenshot%20(350).png)
+
 
 ### ADDING TO NEW TABLE
 
@@ -54,14 +59,14 @@ into Sales_Dirty_Cleaned
 from First_Step;`
 
 
-![Alt Text]()
+![Alt Text](https://github.com/Mario-Gozie/Data-Cleaning-SQL/blob/main/Images/Screenshot%20(351).png)
 
 ### CHECKING IF TABLE WAS CREATED
 
 `select * from Sales_Dirty_Cleaned`
 
 
-![Alt Text]()
+![Alt Text](https://github.com/Mario-Gozie/Data-Cleaning-SQL/blob/main/Images/Screenshot%20(352).png)
 
 ### PARTIALLY UPDATING DATE
 
@@ -73,7 +78,7 @@ set Dates = '2018-01-01'
 where Row_num between 1 and 5;`
 
 
-![Alt Text]()
+![Alt Text](https://github.com/Mario-Gozie/Data-Cleaning-SQL/blob/main/Images/Screenshot%20(353).png)
 
 
 ### VIEWING THE DATA FOR UPDATE
@@ -81,7 +86,7 @@ where Row_num between 1 and 5;`
 select * from Sales_Dirty_Cleaned;
 
 
-![Alt Text]()
+![Alt Text](https://github.com/Mario-Gozie/Data-Cleaning-SQL/blob/main/Images/Screenshot%20(354).png)
 
 
 ### UPDATING ALL DATES
@@ -97,7 +102,7 @@ select Sales_Persons, North, East, West, Employee_ID, Dates
 into successfully_cleaned from patially_cleaned;`
 
 
-![Alt Text]()
+![Alt Text](https://github.com/Mario-Gozie/Data-Cleaning-SQL/blob/main/Images/Screenshot%20(361).png)
 
 
 
@@ -106,7 +111,7 @@ into successfully_cleaned from patially_cleaned;`
 `select * from successfully_cleaned`
 
 
-![Alt Text]()
+![Alt Text](https://github.com/Mario-Gozie/Data-Cleaning-SQL/blob/main/Images/Screenshot%20(362).png)
 
 
 ### DELETING ALL ROWS WITH UNNECESSARY SPACES AND NULL
@@ -116,7 +121,7 @@ where Sales_Persons is null and North is Null or North is null
 or Trim(Sales_Persons) = '';`
 
 
-![Alt Text]() 
+![Alt Text](https://github.com/Mario-Gozie/Data-Cleaning-SQL/blob/main/Images/Screenshot%20(364).png) 
 
 
 ### VIEWING THE CLEAN DATA
@@ -125,4 +130,4 @@ or Trim(Sales_Persons) = '';`
 `select * from successfully_cleaned`
 
 
-![Alt Text]()
+![Alt Text](https://github.com/Mario-Gozie/Data-Cleaning-SQL/blob/main/Images/Screenshot%20(366).png)
