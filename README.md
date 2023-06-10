@@ -1,6 +1,6 @@
 ## INTRODUCTION
 This is a data cleaning task of a sales data using SQL
-
+![Alt Text]()
 
 ### VIEWING THE DATASET
 
