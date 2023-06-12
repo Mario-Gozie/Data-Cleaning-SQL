@@ -2,10 +2,11 @@
 
 ![Alt Text](https://github.com/Mario-Gozie/Sales-Data-and-Tableau-Dashboard/blob/main/Images/introo.jpg)
 
-This is a data cleaning task of a sales data using SQL
+This is a data cleaning task of a sales data using SQL.
+
+_**Disclaimer: This Dataset is a dummy dataset which does not represent any organisation.**_
 
 
-![Alt Text](https://github.com/Mario-Gozie/Sales-Data-and-Tableau-Dashboard/blob/main/Images/introo.jpg)
 
 ### VIEWING THE DATASET
 
