@@ -1,8 +1,11 @@
 ## INTRODUCTION
+
+![Alt Text](https://github.com/Mario-Gozie/Sales-Data-and-Tableau-Dashboard/blob/main/Images/introo.jpg)
+
 This is a data cleaning task of a sales data using SQL
 
 
-![Alt Text]()
+![Alt Text](https://github.com/Mario-Gozie/Sales-Data-and-Tableau-Dashboard/blob/main/Images/introo.jpg)
 
 ### VIEWING THE DATASET
 
